@@ -12,7 +12,7 @@ class Jira
     payload = {
       'jql' => jql,
       'maxResults' => max_results,
-      'fields' => ['summary']
+      'fields' => %w[summary status assignee updated]
     }.to_json
 
     response = post('rest/api/2/search', payload)
@@ -21,7 +21,7 @@ class Jira
   end
 
   private
-  
+
   def client
     Faraday.new(@base_url) do |conn|
       conn.adapter Faraday.default_adapter

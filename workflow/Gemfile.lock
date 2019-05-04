@@ -1,8 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    alfred-workflow (1.8.0)
-      plist (>= 3.1.0)
+    alfred-3_workflow (0.1.0)
     ast (2.4.0)
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
@@ -27,7 +26,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  alfred-workflow
+  alfred-3_workflow
   faraday
   plist
   rubocop
