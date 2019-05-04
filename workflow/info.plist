@@ -77,32 +77,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>E78A589F-C5DE-4ADF-8041-638A3C2381AA</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>A024181F-5E34-48A9-BD71-160061C31511</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>FACF8582-D105-486C-A8E5-1031EC71A369</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>E78A589F-C5DE-4ADF-8041-638A3C2381AA</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Pawel Piotrowicz</string>
@@ -213,98 +187,6 @@
 				<key>alfredfiltersresults</key>
 				<true/>
 				<key>alfredfiltersresultsmatchmode</key>
-				<integer>2</integer>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>62</integer>
-				<key>queuedelaycustom</key>
-				<integer>1</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<false/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>working...</string>
-				<key>script</key>
-				<string>/usr/bin/ruby ./main.rb '{var:jql}'</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>Jira tasks assigned to me</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>A024181F-5E34-48A9-BD71-160061C31511</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>fixedorder</key>
-				<false/>
-				<key>items</key>
-				<string>[{"title":"me","arg":"project=AIR AND assignee=currentUser() and resolved is empty"}]</string>
-				<key>keyword</key>
-				<string>air</string>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>Jira tasks</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.listfilter</string>
-			<key>uid</key>
-			<string>FACF8582-D105-486C-A8E5-1031EC71A369</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>variables</key>
-				<dict>
-					<key>jql</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>E78A589F-C5DE-4ADF-8041-638A3C2381AA</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<true/>
-				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
@@ -373,65 +255,44 @@
 		<key>21557827-8003-42B7-A042-16D4C9278FEC</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1390</integer>
+			<integer>880</integer>
 			<key>ypos</key>
-			<integer>120</integer>
+			<integer>360</integer>
 		</dict>
 		<key>2A7F2486-01DC-4BFA-9B19-BCD01D4436CC</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1790</integer>
+			<integer>1280</integer>
 			<key>ypos</key>
-			<integer>40</integer>
+			<integer>280</integer>
 		</dict>
 		<key>404B362E-B7D9-4862-93BC-A713F70997C1</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1400</integer>
+			<integer>890</integer>
 			<key>ypos</key>
-			<integer>330</integer>
+			<integer>570</integer>
 		</dict>
 		<key>415CDCCB-F772-4E10-A330-60C296733B63</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1680</integer>
+			<integer>1170</integer>
 			<key>ypos</key>
-			<integer>120</integer>
+			<integer>360</integer>
 		</dict>
 		<key>7C1F0797-88D8-4DAD-8793-4960B29F9431</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1790</integer>
+			<integer>1280</integer>
 			<key>ypos</key>
-			<integer>380</integer>
-		</dict>
-		<key>A024181F-5E34-48A9-BD71-160061C31511</key>
-		<dict>
-			<key>xpos</key>
-			<integer>890</integer>
-			<key>ypos</key>
-			<integer>270</integer>
+			<integer>620</integer>
 		</dict>
 		<key>A3EBEF11-7DB4-4257-8664-65866D2A59F4</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1790</integer>
+			<integer>1280</integer>
 			<key>ypos</key>
-			<integer>180</integer>
-		</dict>
-		<key>E78A589F-C5DE-4ADF-8041-638A3C2381AA</key>
-		<dict>
-			<key>xpos</key>
-			<integer>750</integer>
-			<key>ypos</key>
-			<integer>300</integer>
-		</dict>
-		<key>FACF8582-D105-486C-A8E5-1031EC71A369</key>
-		<dict>
-			<key>xpos</key>
-			<integer>410</integer>
-			<key>ypos</key>
-			<integer>290</integer>
+			<integer>420</integer>
 		</dict>
 	</dict>
 	<key>webaddress</key>
