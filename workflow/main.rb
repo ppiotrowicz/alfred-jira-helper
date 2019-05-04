@@ -1,45 +1,24 @@
-#!/usr/bin/env ruby
-# encoding: utf-8
-
-require 'rubygems' unless defined? Gem # rubygems is only needed in 1.8
-require "bundle/bundler/setup"
-require "alfred"
-
-
-
+require_relative 'bundle/bundler/setup'
+require 'alfred'
+require_relative 'jira'
+require 'yaml'
 
 Alfred.with_friendly_error do |alfred|
   fb = alfred.feedback
+  config = YAML.load_file(File.expand_path('~/.jira.yml'))
 
-  # add a file feedback
-  fb.add_file_item(File.expand_path "~/Applications/")
-
-  # add an arbitrary feedback
-  fb.add_item({
-    :uid      => ""                     ,
-    :title    => "Just a Test"          ,
-    :subtitle => "feedback item"        ,
-    :arg      => "A test feedback Item" ,
-    :valid    => "yes"                  ,
-  })
-  
-  # add an feedback to test rescue feedback
-  fb.add_item({
-    :uid          => ""                     ,
-    :title        => "Rescue Feedback Test" ,
-    :subtitle     => "rescue feedback item" ,
-    :arg          => ""                     ,
-    :autocomplete => "failed"               ,
-    :valid        => "no"                   ,
-  })
-
-  if ARGV[0].eql? "failed"
-    alfred.with_rescue_feedback = true
-    raise Alfred::NoBundleIDError, "Wrong Bundle ID Test!"
+  jira = Jira.new(config)
+  result = jira.filter_issues(ARGV[0], 30)
+  result.fetch('issues').each do |issue|
+    key = issue.fetch('key')
+    summary = issue.dig('fields', 'summary')
+    fb.add_item(
+      uid: key,
+      title: "#{key} - #{summary}",
+      arg: key,
+      valid: 'yes'
+    )
   end
 
-  puts fb.to_xml(ARGV)
+  puts fb.to_alfred
 end
-
-
-
