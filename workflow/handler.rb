@@ -8,9 +8,11 @@ require_relative 'cache'
 class Handler
   MAX_RESULTS = 30
   CACHE_TTL = 5 * 60
+  CACHE_LOCATION = '~/.cache/alfred-jira-helper'
+  CONFIG_LOCATION = '~/.config/jira.yml'
 
   def call(query)
-    cache = Cache.new(File.expand_path('~/.cache/ppiotrowicz-alfred-jira'), CACHE_TTL)
+    cache = Cache.new(File.expand_path(CACHE_LOCATION), CACHE_TTL)
 
     if (cached = cache.get(query))
       cached
@@ -26,7 +28,7 @@ class Handler
   def live(query)
     workflow = Alfred3::Workflow.new
 
-    config = YAML.load_file(File.expand_path('~/.config/jira.yml'))
+    config = YAML.load_file(File.expand_path(CONFIG_LOCATION))
     jira = Jira.new(config)
     result = jira.filter_issues(query, MAX_RESULTS)
 
