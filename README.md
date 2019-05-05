@@ -18,6 +18,20 @@ queries:
     jql: assignee is empty
 ```
 
+2. Install workflow
+
+``` shell
+rake bundle:install
+
+# if using dropbox sync (check in Rakefile if preferences folder is correct, default: ~/Dropbox/Alfred/Alfred.alfredpreferences)
+rake dbxinstall
+
+# if not using dropbox (check in Rakefile if preferences folder is correct, default: ~/Library/Alfred 3/Alfred.alfredpreferences)
+rake install
+```
+
+3. Profit!
+
 ## Usage
 
 ## Credits
