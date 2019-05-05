@@ -2,6 +2,22 @@
 
 ## Setup
 
+1. Create config `~/.config/jira.yml`
+
+``` yaml
+---
+url: https://your.jira.address/
+username: your-login@your.jira
+password: your secret password, yes in plain text
+queries:
+  - name: Jira tasks assigned to me
+    jql: assignee=currentUser() and resolved is empty
+  - name: Unresolved tasks
+    jql: resolved is empty
+  - name: Unassigned tasks
+    jql: assignee is empty
+```
+
 ## Usage
 
 ## Credits

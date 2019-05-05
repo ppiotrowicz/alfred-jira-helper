@@ -32,12 +32,12 @@ class Handler
     jira = Jira.new(config)
     result = jira.filter_issues(query, MAX_RESULTS)
 
-    result.fetch('issues').each { |issue| to_alfred_item(issue) }
+    result.fetch('issues').each { |issue| to_alfred_item(issue, workflow, config) }
 
     workflow.output
   end
 
-  def to_alfred_item(issue, workflow)
+  def to_alfred_item(issue, workflow, config)
     key = issue.fetch('key')
     summary = issue.dig('fields', 'summary')
     status = issue.dig('fields', 'status', 'name')
